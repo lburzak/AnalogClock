@@ -67,23 +67,27 @@ class HandPreferences {
             color = dc.px(DEFAULT_COLOR);
         }
 
-        public Builder width(int pixels) {
-            this.width = pixels;
+        public Builder widthIfValid(int pixels) {
+            if (pixels > 0)
+                this.width = pixels;
             return this;
         }
 
-        public Builder length(int pixels) {
-            this.length = pixels;
+        public Builder lengthIfValid(int pixels) {
+            if (pixels > 0)
+                this.length = pixels;
             return this;
         }
 
-        public Builder offset(int pixels) {
-            this.offset = pixels;
+        public Builder offsetIfValid(int pixels) {
+            if (pixels > 0)
+                this.offset = pixels;
             return this;
         }
 
-        public Builder color(int color) {
-            this.color = color;
+        public Builder colorIfValid(int color) {
+            if (color != 0)
+                this.color = color;
             return this;
         }
 

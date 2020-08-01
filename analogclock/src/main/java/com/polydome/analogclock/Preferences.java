@@ -1,6 +1,7 @@
 package com.polydome.analogclock;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 class Preferences {
@@ -13,12 +14,27 @@ class Preferences {
     }
 
     public static Preferences fromAttributes(Context context, AttributeSet attrs, DimensionConverter dimensionConverter) {
-        HandPreferences hourHand;
-        HandPreferences minuteHand;
+        TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.AnalogClock, 0, 0);
 
-        hourHand = new HandPreferences.Builder(dimensionConverter).build();
-        minuteHand = new HandPreferences.Builder(dimensionConverter).build();
+        HandPreferences.Builder hourHand = new HandPreferences.Builder(dimensionConverter);
+        HandPreferences.Builder minuteHand = new HandPreferences.Builder(dimensionConverter);
 
-        return new Preferences(hourHand, minuteHand);
+        try {
+            hourHand
+                    .lengthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_length, 0))
+                    .widthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_width, 0))
+                    .offsetIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_offset, 0))
+                    .colorIfValid(styledAttributes.getColor(R.styleable.AnalogClock_hour_hand_color, 0));
+
+            minuteHand
+                    .lengthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_length, 0))
+                    .widthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_width, 0))
+                    .offsetIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_offset, 0))
+                    .colorIfValid(styledAttributes.getColor(R.styleable.AnalogClock_minute_hand_color, 0));
+        } finally {
+            styledAttributes.recycle();
+        }
+
+        return new Preferences(hourHand.build(), minuteHand.build());
     }
 }
