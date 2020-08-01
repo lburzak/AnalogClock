@@ -2,16 +2,16 @@ package com.polydome.analogclock.demo;
 
 import android.os.Handler;
 
-import com.polydome.analogclock.AnalogClockView;
+import com.polydome.analogclock.AnalogClock;
 
 public class ClockSpinner {
     private final Thread tickingThread = new TickingThread();
     private final Handler mainHandler;
-    private final AnalogClockView clockView;
+    private final AnalogClock clockView;
 
     private int millisPerHour = 1000;
 
-    public ClockSpinner(Handler mainHandler, AnalogClockView clockView) {
+    public ClockSpinner(Handler mainHandler, AnalogClock clockView) {
         this.mainHandler = mainHandler;
         this.clockView = clockView;
     }

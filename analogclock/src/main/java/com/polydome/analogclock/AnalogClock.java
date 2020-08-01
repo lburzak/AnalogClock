@@ -10,7 +10,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-public class AnalogClockView extends View {
+public class AnalogClock extends View {
     private final static double ANGLE_FULL = 2 * Math.PI;
     private final static double CLOCK_PHASE = - Math.PI / 2;
 
@@ -33,7 +33,7 @@ public class AnalogClockView extends View {
         return this.center;
     }
 
-    public AnalogClockView(Context context, @Nullable AttributeSet attrs) {
+    public AnalogClock(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         prefs = Preferences.fromAttributes(attrs);

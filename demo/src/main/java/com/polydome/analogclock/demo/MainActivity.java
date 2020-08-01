@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import androidx.annotation.Nullable;
 
-import com.polydome.analogclock.AnalogClockView;
+import com.polydome.analogclock.AnalogClock;
 import com.polydome.demo.R;
 
 public class MainActivity extends Activity {
@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AnalogClockView clockView = findViewById(R.id.clock);
+        AnalogClock clockView = findViewById(R.id.clock);
 
         Handler mainHandler = new Handler(getMainLooper());
         ClockSpinner clockSpinner = new ClockSpinner(mainHandler, clockView);
