@@ -36,7 +36,9 @@ public class AnalogClock extends View {
     public AnalogClock(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        prefs = Preferences.fromAttributes(attrs);
+        DimensionConverter dimensionConverter = new ResourcesDimensionConverter(context.getResources());
+
+        prefs = Preferences.fromAttributes(context, attrs, dimensionConverter);
         state = new State(0, 0);
 
         hourHandPaint = createHandPaint(prefs.hourHand.getColor(), prefs.hourHand.getWidth());
@@ -73,10 +75,10 @@ public class AnalogClock extends View {
         hourHandPath.reset();
         minuteHandPath.reset();
 
-        plotHourHandPath(hourHandPath, px(prefs.hourHand.getLength()), px(prefs.hourHand.getOffset()), state.getHour(), state.getMinute());
+        plotHourHandPath(hourHandPath, prefs.hourHand.getLength(), prefs.hourHand.getOffset(), state.getHour(), state.getMinute());
         canvas.drawPath(hourHandPath, hourHandPaint);
 
-        plotMinuteHandPath(minuteHandPath, px(prefs.minuteHand.getLength()), px(prefs.minuteHand.getOffset()), state.getMinute());
+        plotMinuteHandPath(minuteHandPath, prefs.minuteHand.getLength(), prefs.minuteHand.getOffset(), state.getMinute());
         canvas.drawPath(minuteHandPath, minuteHandPaint);
     }
 
@@ -117,9 +119,5 @@ public class AnalogClock extends View {
 
         lineAtAngle(dst, getCenter(), handAngle, length, offset);
         dst.close();
-    }
-
-    private int px(int dp) {
-        return (int) (dp * getResources().getDisplayMetrics().density);
     }
 }

@@ -13,7 +13,7 @@ class HandPreferences {
      * Default stroke width of a clock hand.
      * Expressed in DPs.
      */
-    public final static int DEFAULT_WIDTH = 20;
+    public final static int DEFAULT_WIDTH = 5;
 
     /**
      * Default offset of a clock hand.
@@ -31,18 +31,11 @@ class HandPreferences {
     private final int offset;
     private final int color;
 
-    public HandPreferences(int width, int length, int offset, int color) {
+    private HandPreferences(int width, int length, int offset, int color) {
         this.width = width;
         this.length = length;
         this.offset = offset;
         this.color = color;
-    }
-
-    public HandPreferences() {
-        this.width = DEFAULT_WIDTH;
-        this.length = DEFAULT_LENGTH;
-        this.offset = DEFAULT_OFFSET;
-        this.color = DEFAULT_COLOR;
     }
 
     public int getWidth() {
@@ -59,5 +52,43 @@ class HandPreferences {
 
     public int getColor() {
         return color;
+    }
+
+    public static class Builder {
+        private int width;
+        private int length;
+        private int offset;
+        private int color;
+
+        public Builder(DimensionConverter dc) {
+            width = dc.px(DEFAULT_WIDTH);
+            length = dc.px(DEFAULT_LENGTH);
+            offset = dc.px(DEFAULT_OFFSET);
+            color = dc.px(DEFAULT_COLOR);
+        }
+
+        public Builder width(int pixels) {
+            this.width = pixels;
+            return this;
+        }
+
+        public Builder length(int pixels) {
+            this.length = pixels;
+            return this;
+        }
+
+        public Builder offset(int pixels) {
+            this.offset = pixels;
+            return this;
+        }
+
+        public Builder color(int color) {
+            this.color = color;
+            return this;
+        }
+
+        public HandPreferences build() {
+            return new HandPreferences(width, length, offset, color);
+        }
     }
 }
