@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
         ClockSpinner clockSpinner = new ClockSpinner(mainHandler, clockView);
 
         clockSpinner.setMillisPerHour(500);
-        clockSpinner.start();
+//        clockSpinner.start();
+        clockView.setTime(4, 70);
     }
 }

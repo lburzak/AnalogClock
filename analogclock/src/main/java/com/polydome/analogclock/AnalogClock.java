@@ -10,6 +10,28 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+
+/**
+ * Analog clock with styleable face and hands.
+ *
+ * Indicates time with precision to 1 minute.
+ *
+ * <p>
+ *     <b>XML attributes</b>
+ * </p>
+ * See {@link android.R.styleable#AnalogClock AnalogClock Attributes},
+ * {@link android.R.styleable#View View Attributes}
+ *
+ * @attr ref android.R.styleable#AnalogClock_hour_hand_length
+ * @attr ref android.R.styleable#AnalogClock_hour_hand_width
+ * @attr ref android.R.styleable#AnalogClock_hour_hand_offset
+ * @attr ref android.R.styleable#AnalogClock_hour_hand_color
+ * @attr ref android.R.styleable#AnalogClock_minute_hand_length
+ * @attr ref android.R.styleable#AnalogClock_minute_hand_width
+ * @attr ref android.R.styleable#AnalogClock_minute_hand_offset
+ * @attr ref android.R.styleable#AnalogClock_minute_hand_color
+ * @attr ref android.R.styleable#AnalogClock_face_background
+ */
 public class AnalogClock extends View {
     private final static double ANGLE_FULL = 2 * Math.PI;
     private final static double CLOCK_PHASE = - Math.PI / 2;
@@ -23,7 +45,21 @@ public class AnalogClock extends View {
     private final Preferences prefs;
     private final State state;
 
-    // TODO: Document
+    /**
+     * Sets the hands position to indicate given time.
+     * @param hour Hour to be expressed by the clock.
+     *             <p>
+     *             Numbers outside the 0 - 11 range are wrapped up with modulo 12, e.g. -1 to 11, 12 to 0.
+     *             </p>
+     * @param minute Minute to be expressed by the clock. Affects both hour and minute hand.
+     *               <p>
+     *               <b>WARNING</b>: For hour hand, numbers outside the 0 - 59 range have direct impact on indicated hour:
+     *               9:72 and 9:-10 will be indicated by the hour hand as 10:12 and 8:50 respectively.
+     *               </p>
+     *               <p>
+     *               For minute hand, numbers outside the 0 - 59 range are wrapped with modulo 60, e.g. -1 to 59, 60 to 0
+     *               </p>
+     */
     public void setTime(int hour, int minute) {
         state.setHour(hour);
         state.setMinute(minute);

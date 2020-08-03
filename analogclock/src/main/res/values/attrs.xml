@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AnalogClock">
+        <!-- Length of the hour hand. -->
         <attr name="hour_hand_length" format="dimension"/>
+
+        <!-- Width of the hour hand stroke. -->
         <attr name="hour_hand_width" format="dimension"/>
+
+        <!-- The distance from the view center to the point where hour hand starts.
+
+        Note: This does not affect the hand end, which is controlled with the `hour_hand_length` attribute -->
         <attr name="hour_hand_offset" format="dimension"/>
+
+        <!-- Color of the hour hand stroke. -->
         <attr name="hour_hand_color" format="color"/>
+
+        <!-- Length of the minute hand. -->
         <attr name="minute_hand_length" format="dimension"/>
+
+        <!-- Width of the minute hand stroke. -->
         <attr name="minute_hand_width" format="dimension"/>
+
+        <!-- The distance from the view center to the point where minute hand starts.
+
+        Note: This does not affect the hand end, which is controlled with the `minute_hand_length` attribute -->
         <attr name="minute_hand_offset" format="dimension"/>
+
+        <!-- Color of the minute hand stroke. -->
         <attr name="minute_hand_color" format="color"/>
+
+        <!-- Clock face background. -->
         <attr name="face_background" format="reference"/>
     </declare-styleable>
 </resources>
