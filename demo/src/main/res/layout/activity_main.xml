@@ -9,12 +9,12 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:padding="50dp"
-        app:minute_hand_color="@android:color/holo_green_dark"
-        app:minute_hand_length="100dp"
-        app:minute_hand_width="3dp"
-        app:hour_hand_length="40dp"
-        app:hour_hand_width="5dp"
-        app:face_background="@drawable/ic_clock_face"/>
+        app:minuteHandColor="@android:color/holo_green_dark"
+        app:minuteHandLength="100dp"
+        app:minuteHandWidth="3dp"
+        app:hourHandLength="40dp"
+        app:hourHandWidth="5dp"
+        app:faceBackground="@drawable/ic_clock_face"/>
 
     <TextView android:id="@+id/main_title"
         android:layout_width="wrap_content"

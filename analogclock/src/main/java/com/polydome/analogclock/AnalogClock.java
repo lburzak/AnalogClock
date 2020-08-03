@@ -22,15 +22,15 @@ import androidx.annotation.Nullable;
  * See {@link android.R.styleable#AnalogClock AnalogClock Attributes},
  * {@link android.R.styleable#View View Attributes}
  *
- * @attr ref android.R.styleable#AnalogClock_hour_hand_length
- * @attr ref android.R.styleable#AnalogClock_hour_hand_width
- * @attr ref android.R.styleable#AnalogClock_hour_hand_offset
- * @attr ref android.R.styleable#AnalogClock_hour_hand_color
- * @attr ref android.R.styleable#AnalogClock_minute_hand_length
- * @attr ref android.R.styleable#AnalogClock_minute_hand_width
- * @attr ref android.R.styleable#AnalogClock_minute_hand_offset
- * @attr ref android.R.styleable#AnalogClock_minute_hand_color
- * @attr ref android.R.styleable#AnalogClock_face_background
+ * @attr ref android.R.styleable#AnalogClock_hourHandLength
+ * @attr ref android.R.styleable#AnalogClock_hourHandWidth
+ * @attr ref android.R.styleable#AnalogClock_hourHandOffset
+ * @attr ref android.R.styleable#AnalogClock_hourHandColor
+ * @attr ref android.R.styleable#AnalogClock_minuteHandLength
+ * @attr ref android.R.styleable#AnalogClock_minuteHandWidth
+ * @attr ref android.R.styleable#AnalogClock_minuteHandOffset
+ * @attr ref android.R.styleable#AnalogClock_minuteHandColor
+ * @attr ref android.R.styleable#AnalogClock_faceBackground
  */
 public class AnalogClock extends View {
     private final static double ANGLE_FULL = 2 * Math.PI;

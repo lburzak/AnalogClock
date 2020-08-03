@@ -2,34 +2,34 @@
 <resources>
     <declare-styleable name="AnalogClock">
         <!-- Length of the hour hand. -->
-        <attr name="hour_hand_length" format="dimension"/>
+        <attr name="hourHandLength" format="dimension"/>
 
         <!-- Width of the hour hand stroke. -->
-        <attr name="hour_hand_width" format="dimension"/>
+        <attr name="hourHandWidth" format="dimension"/>
 
         <!-- The distance from the view center to the point where hour hand starts.
 
-        Note: This does not affect the hand end, which is controlled with the `hour_hand_length` attribute -->
-        <attr name="hour_hand_offset" format="dimension"/>
+        Note: This does not affect the hand end, which is controlled with the `hourHandLength` attribute -->
+        <attr name="hourHandOffset" format="dimension"/>
 
         <!-- Color of the hour hand stroke. -->
-        <attr name="hour_hand_color" format="color"/>
+        <attr name="hourHandColor" format="color"/>
 
         <!-- Length of the minute hand. -->
-        <attr name="minute_hand_length" format="dimension"/>
+        <attr name="minuteHandLength" format="dimension"/>
 
         <!-- Width of the minute hand stroke. -->
-        <attr name="minute_hand_width" format="dimension"/>
+        <attr name="minuteHandWidth" format="dimension"/>
 
         <!-- The distance from the view center to the point where minute hand starts.
 
-        Note: This does not affect the hand end, which is controlled with the `minute_hand_length` attribute -->
-        <attr name="minute_hand_offset" format="dimension"/>
+        Note: This does not affect the hand end, which is controlled with the `minuteHandLength` attribute -->
+        <attr name="minuteHandOffset" format="dimension"/>
 
         <!-- Color of the minute hand stroke. -->
-        <attr name="minute_hand_color" format="color"/>
+        <attr name="minuteHandColor" format="color"/>
 
         <!-- Clock face background. -->
-        <attr name="face_background" format="reference"/>
+        <attr name="faceBackground" format="reference"/>
     </declare-styleable>
 </resources>
