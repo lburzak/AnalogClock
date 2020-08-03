@@ -52,16 +52,38 @@ public class AnalogClock extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int preferredWidth = MeasureSpec.getSize(widthMeasureSpec);
+        int preferredHeight = MeasureSpec.getSize(heightMeasureSpec);
 
-        int size;
+        int longerHandLength = Math.max(prefs.hourHand.getLength(), prefs.minuteHand.getLength());
 
-        if (widthMode == MeasureSpec.EXACTLY || heightMode == MeasureSpec.EXACTLY) {
-            size = Math.min(MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.getSize(heightMeasureSpec));
-        } else {
-            size = Math.max(prefs.hourHand.getLength(), prefs.minuteHand.getLength()) * 2;
+        int measuredWidth = 0;
+        switch (widthMode) {
+            case MeasureSpec.EXACTLY:
+                measuredWidth = preferredWidth;
+                break;
+            case MeasureSpec.AT_MOST:
+                measuredWidth = Math.min(longerHandLength * 2, preferredWidth);
+                break;
+            case MeasureSpec.UNSPECIFIED:
+                measuredWidth = longerHandLength * 2;
+                break;
         }
 
-        setMeasuredDimension(size, size);
+        int measuredHeight = 0;
+        switch (heightMode) {
+            case MeasureSpec.EXACTLY:
+                measuredHeight = preferredHeight;
+                break;
+            case MeasureSpec.AT_MOST:
+                measuredHeight = Math.min(longerHandLength * 2, preferredHeight);
+                break;
+            case MeasureSpec.UNSPECIFIED:
+                measuredHeight = longerHandLength * 2;
+                break;
+        }
+
+        setMeasuredDimension(measuredWidth, measuredHeight);
     }
 
     @Override
