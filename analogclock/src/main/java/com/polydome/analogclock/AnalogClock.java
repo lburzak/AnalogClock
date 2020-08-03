@@ -90,12 +90,15 @@ public class AnalogClock extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         center.x = getWidth() / 2;
         center.y = getHeight() / 2;
+        prefs.backgroundDrawable.setBounds(0, 0, getWidth(), getHeight());
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         hourHandPath.reset();
         minuteHandPath.reset();
+
+        prefs.backgroundDrawable.draw(canvas);
 
         plotHourHandPath(hourHandPath, prefs.hourHand.getLength(), prefs.hourHand.getOffset(), state.getHour(), state.getMinute());
         canvas.drawPath(hourHandPath, hourHandPaint);

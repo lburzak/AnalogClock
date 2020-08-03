@@ -9,5 +9,6 @@
         <attr name="minute_hand_width" format="dimension"/>
         <attr name="minute_hand_offset" format="dimension"/>
         <attr name="minute_hand_color" format="color"/>
+        <attr name="face_background" format="reference"/>
     </declare-styleable>
 </resources>
