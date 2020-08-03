@@ -21,16 +21,16 @@ class Preferences {
 
         try {
             hourHand
-                    .lengthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_length, 0))
-                    .widthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_width, 0))
-                    .offsetIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_offset, 0))
-                    .colorIfValid(styledAttributes.getColor(R.styleable.AnalogClock_hour_hand_color, 0));
+                    .length(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_length, HandPreferences.DEFAULT_LENGTH))
+                    .width(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_width, HandPreferences.DEFAULT_WIDTH))
+                    .offset(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_hour_hand_offset, HandPreferences.DEFAULT_OFFSET))
+                    .color(styledAttributes.getColor(R.styleable.AnalogClock_hour_hand_color, HandPreferences.DEFAULT_COLOR));
 
             minuteHand
-                    .lengthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_length, 0))
-                    .widthIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_width, 0))
-                    .offsetIfValid(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_offset, 0))
-                    .colorIfValid(styledAttributes.getColor(R.styleable.AnalogClock_minute_hand_color, 0));
+                    .length(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_length, HandPreferences.DEFAULT_LENGTH))
+                    .width(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_width, HandPreferences.DEFAULT_WIDTH))
+                    .offset(styledAttributes.getDimensionPixelSize(R.styleable.AnalogClock_minute_hand_offset, HandPreferences.DEFAULT_OFFSET))
+                    .color(styledAttributes.getColor(R.styleable.AnalogClock_minute_hand_color, HandPreferences.DEFAULT_COLOR));
         } finally {
             styledAttributes.recycle();
         }
