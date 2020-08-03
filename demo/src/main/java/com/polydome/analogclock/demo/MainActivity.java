@@ -7,7 +7,6 @@ import android.os.Handler;
 import androidx.annotation.Nullable;
 
 import com.polydome.analogclock.AnalogClock;
-import com.polydome.demo.R;
 
 public class MainActivity extends Activity {
     @Override
