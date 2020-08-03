@@ -90,7 +90,7 @@ public class AnalogClock extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         center.x = getWidth() / 2;
         center.y = getHeight() / 2;
-        prefs.backgroundDrawable.setBounds(0, 0, getWidth(), getHeight());
+        prefs.backgroundDrawable.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
     }
 
     @Override

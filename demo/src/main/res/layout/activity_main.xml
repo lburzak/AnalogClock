@@ -8,6 +8,7 @@
         android:id="@+id/clock"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:padding="50dp"
         app:minute_hand_color="@android:color/holo_green_dark"
         app:minute_hand_length="100dp"
         app:minute_hand_width="3dp"
