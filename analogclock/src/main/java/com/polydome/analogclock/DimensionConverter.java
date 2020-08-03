@@ -1,5 +1,5 @@
 package com.polydome.analogclock;
 
-public interface DimensionConverter {
+interface DimensionConverter {
     int px(int dp);
 }

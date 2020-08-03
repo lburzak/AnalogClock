@@ -23,14 +23,11 @@ public class AnalogClock extends View {
     private final Preferences prefs;
     private final State state;
 
+    // TODO: Document
     public void setTime(int hour, int minute) {
         state.setHour(hour);
         state.setMinute(minute);
         invalidate();
-    }
-
-    private Point getCenter() {
-        return this.center;
     }
 
     public AnalogClock(Context context, @Nullable AttributeSet attrs) {
@@ -84,6 +81,10 @@ public class AnalogClock extends View {
         }
 
         setMeasuredDimension(measuredWidth, measuredHeight);
+    }
+
+    private Point getCenter() {
+        return this.center;
     }
 
     @Override
